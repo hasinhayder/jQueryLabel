@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="jqlabel.css" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+        <script type="text/javascript" src="jqlabel.js"></script>
+    </head>
+    <body>
+
+        <h2>Labels on the fly</h2>
+        <p>&nbsp;</p>
+        <table width="80%" border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <th style="text-align: left" width="30">&nbsp;</th>
+                <th style="text-align: left" width="30">#</th>
+                <th style="text-align: left">Title</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td>1</td>
+                <td>
+                    <p>Go to bed. You are already late to sleep. <br><span class="label">Overdue</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td>2</td>
+                <td>
+                    <p>Study on Appcelerator Titanium. Make sure everything works properly. <br><span class="label">Done</span> <span class="label">Learning</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td>3</td>
+                <td>
+                    <p>Study on how to develop jQuery plugins. <br><span class="label">Learning</span> <span class="label">Pending</span></p>
+                </td>
+            </tr>
+        </table>
+
+
+        <script type="text/javascript">
+            
+
+            $(document).ready(function(){
+                $(".label").jQLabel({"labels":{"Done":"#2C5700",
+                                               "Pending":"#FF9E00",
+                                               "Learning":"#009ECE",
+                                               "Overdue":"#CE0000"
+                                         }});
+            })
+        </script>
+    </body>
+
+</html>
+
