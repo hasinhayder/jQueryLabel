@@ -31,9 +31,9 @@
             if(labels[key]) {
                 $(this).addClass("jq-base");
                 $(this).css("backgroundColor",labels[key]);
+                if(opts['pointer']) $(this).css("cursor","pointer");
             }
         })
-
     }
 
 })(jQuery);

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="jqlabel.css" />
+        <link rel="stylesheet" href="jqlabel.css?1" />
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
         <script type="text/javascript" src="jqlabel.js"></script>
     </head>
@@ -36,21 +36,19 @@
                 </td>
             </tr>
         </table>
-        <p>&nbsp</p>
-        <p>
-        	Check out the source code of jQLabel Plugin at <a href='https://github.com/hasinhayder/jQueryLabel'>https://github.com/hasinhayder/jQueryLabel</a>
-        </p>
 
 
         <script type="text/javascript">
             
 
             $(document).ready(function(){
-                $(".label").jQLabel({"labels":{"Done":"#2C5700",
+                $(".label").jQLabel({ "pointer":true,
+                                      "labels":{"Done":"#2C5700",
                                                "Pending":"#FF9E00",
                                                "Learning":"#009ECE",
                                                "Overdue":"#CE0000"
-                                         }});
+                                         }
+                                     });
             })
         </script>
     </body>
