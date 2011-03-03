@@ -10,30 +10,36 @@
  *
  * usage: see demo.html
  * usage: $(".label").jQLabel({"labels":{"Overdue":"#C73B0B","Expiring Today":"#978E43"}});
+ *
+ * changelog
+ * March 03, 2011: Added support to convert spans with a particular class look like a label
  */
 (function($){
     var opts;
     $.fn.jQLabel = function(options){
         var defaults = {
             pointer:false,
-            labels:{
-                "Overdue":"#CE0000"
-            }
+            backgroundColor:"#CE0000" /* this will only be used if labels are not supplied */
         }
         opts = $.extend(defaults, options);
         var labels={}
         for(j in opts['labels']){
             labels[j.toLowerCase()]=opts['labels'][j];
         }
-
-        $(this).each(function(){
-            var key = $(this).text().toLowerCase();
-            if(labels[key]) {
-                $(this).addClass("jq-base");
-                $(this).css("backgroundColor",labels[key]);
-                if(opts['pointer']) $(this).css("cursor","pointer");
-            }
-        })
+        if($.isEmptyObject(opts['labels'])){
+            $(this).addClass("jq-base");
+            $(this).css("backgroundColor",opts['backgroundColor']);
+            if(opts['pointer']) $(this).css("cursor","pointer");
+        }else{
+            $(this).each(function(){
+                var key = $(this).text().toLowerCase();
+                if(labels[key]) {
+                    $(this).addClass("jq-base");
+                    $(this).css("backgroundColor",labels[key]);
+                    if(opts['pointer']) $(this).css("cursor","pointer");
+                }
+            })
+        }
     }
 
 })(jQuery);
