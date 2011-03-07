@@ -13,6 +13,7 @@
  *
  * changelog
  * March 03, 2011: Added support to convert spans with a particular class look like a label
+ * $(".important").jQLabel();
  */
 (function($){
     var opts;
