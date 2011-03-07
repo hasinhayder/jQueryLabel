@@ -1,6 +1,6 @@
 /**
  * @name: jQLabel
- * @version:1.0.0
+ * @version:1.0.2
  * @Author: Hasin Hayder [hasin@leevio.com]
  * @date: 14th Feb, 2011
  *
@@ -19,7 +19,8 @@
     $.fn.jQLabel = function(options){
         var defaults = {
             pointer:false,
-            backgroundColor:"#CE0000" /* this will only be used if labels are not supplied */
+            backgroundColor:"#CE0000", /* this will only be used if labels are not supplied */
+            color:"#FEFEFE"
         }
         opts = $.extend(defaults, options);
         var labels={}
@@ -30,6 +31,7 @@
             $(this).addClass("jq-base");
             $(this).css("backgroundColor",opts['backgroundColor']);
             if(opts['pointer']) $(this).css("cursor","pointer");
+            $(this).css("color",opts['color']);
         }else{
             $(this).each(function(){
                 var key = $(this).text().toLowerCase();
@@ -37,6 +39,7 @@
                     $(this).addClass("jq-base");
                     $(this).css("backgroundColor",labels[key]);
                     if(opts['pointer']) $(this).css("cursor","pointer");
+                    $(this).css("color",opts['color']);
                 }
             })
         }
