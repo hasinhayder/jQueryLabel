@@ -1,0 +1,246 @@
+<!html>
+<html>
+    <head>
+        <title>jQLabel jQuery Plugin - Create Beautiful Labels</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jqlabel.js"></script>
+        <style type="text/css">
+            body{
+                background: url(images/bg.jpg);
+                color:#595959;
+                font-family:arial,sans-serif;
+                font-size:12px;
+                /*text-shadow:0 1px 0 #FFFFFF;*/
+
+            }
+
+            .nav{
+                padding-bottom: 5px;
+                border-bottom: 1px solid #A49774;
+                margin-bottom: 20px;
+            }
+            h1{
+
+            }
+
+            .label, .important{
+                text-shadow:none;
+            }
+
+            .intro{
+                line-height: 1.5em;
+                font-size: 14px;
+                text-align: justify;
+                margin-right: 20px;
+                margin-top: 20px;
+                text-shadow:0 1px 0 #FFFFFF;
+            }
+
+            .example h2{
+                color:#FEFEFE;
+                font-size: 16px;
+                display: block;
+                width: 100%;
+                border-bottom: 1px solid #EFEFEF;
+            }
+
+            .example .code{
+                padding-left: 30px;
+                line-height: 1.5em;
+            }
+            .example{
+                background-color: #A49774;
+                padding:10 20;
+                color: #FEFEFE;
+                -moz-border-radius:5px;
+            }
+
+            .footer{
+                margin-top: 30px;
+                margin-bottom: 30px;
+                padding-left: 5px;
+            }
+
+            .left{
+                text-align: left
+            }
+            .right{
+                text-align: right;
+            }
+
+            a{
+                color:#595959;
+            }
+
+            li{
+                line-height: 1.5em;
+                margin-bottom: 10px;
+                font-size: 14px;
+            }
+
+        </style>
+
+        <link rel="stylesheet" href="styles/grid.css"/>
+    </head>
+    <body>
+        <div class="row">
+            <div class="column grid_12">
+                <div class="nav">
+                    <h1>jQLabel</h1>
+                    <p class="moto">Create <span class="label">labels</span> like <span class="label">GMail</span> with this <span class="label">awesome</span> jQuery plugin, easily</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column grid_8">
+                <h2>What is jQLabel?</h2>
+                <p class="intro">
+                    Using jQLabel you can create labels which are similar to GMail labels in look-n-feel. You can
+                    customize the background color of these labels based on <span class="important">their content</span> or by  <span class="important">their class name</span> .
+                    jQLabel is released under New BSD license. 
+
+                </p>
+
+                <p class="intro">
+                    Using jqlabel is easy. Just set class name to your dom elements like &lt;span/>, &lt;p/>, &lt;a/> like the
+                    following block.
+
+                </p>
+                <div class="example">
+                    <h2>Example HTML</h2>
+                    <pre class="code">
+Create &lt;span class="label">labels&lt;/span> like &lt;span class="label">GMail&lt;/span>
+with this &lt;span class="label">awesome&lt;/span> jQuery plugin, easily
+                    </pre>
+                </div>
+                <p class="intro">
+                    Now call jqlabel plugin in your $(document).ready() method like this
+
+                </p>
+                <div class="example">
+                    <h2>Example Javascript</h2>
+                    <pre class="code">
+$(document).ready(function(){
+    $(".label").jQLabel({"pointer":true,
+                         "labels":{
+                            "awesome":"#FF9E00",
+                            "gmail":"#A65D03",
+                            "labels":"#A49774"
+                         }
+    });
+})
+                    </pre>
+                </div>
+
+                <p class="intro">
+                    Output will be like - Create <span class="label">labels</span> like <span class="label">GMail</span> with this <span class="label">awesome</span> jQuery plugin, easily
+                </p>
+
+                <br/>
+                <h2>Using by class name</h2>
+                <p class="intro">
+                    Instead of creating labels by using content, you can simply convert them by element's class name. For example
+                    check out the following HTML and Javascript block.
+                </p>
+
+                <div class="example">
+                    <h2>Example HTML</h2>
+                    <pre class="code">
+An &lt;span class="important">Important&lt;/span> Label has
+some  &lt;span class="important">important content&lt;/span> in it
+                    </pre>
+                </div>
+
+                <p class="intro">
+                    Now call jqlabel plugin in your $(document).ready() method like this
+
+                </p>
+                <div class="example">
+                    <h2>Example Javascript</h2>
+                    <pre class="code">
+$(document).ready(function(){
+    $(".important").jQLabel();
+})
+                    </pre>
+                </div>
+                <p class="intro">
+                    And output will look like - An <span class="important">Important</span> Label has some  <span class="important">important content</span> in it
+                </p>
+
+                <br/>
+                <h2>Available Options</h2>
+                <p>
+                    <span class="options">color</span> &nbsp; Specify the text color of the label using <span class="options">color</span> option. By default the value
+                    of this options is set to "#FEFEFE"
+                </p>
+                <div class="example">
+                    <pre class="code">
+$(".important").jQLabel({color:"#DDD"});
+                    </pre>
+                </div>
+
+                <p>
+                    <span class="options">backgroundColor</span> &nbsp; Specify the background color of the label using <span class="options">backgroundColor</span> option. By default
+                    it's value is set to "#CE0000"
+                </p>
+                <div class="example">
+                    <pre class="code">
+$(".important").jQLabel({backgroundColor:"#356781"});
+                    </pre>
+                </div>
+                <p>
+                    <span class="options">pointer</span> &nbsp; if set to true, the cursor's style will be "pointer" when someone hovers mouse over the labels.
+                </p>
+                <div class="example">
+                    <pre class="code">
+$(".important").jQLabel({pointer:false});
+                    </pre>
+                </div>
+
+            </div>
+            <div class="column grid_4">
+                <div class="download">
+                    <h2>Download Source Code</h2>
+                    <ul>
+                        <li><a href="https://github.com/hasinhayder/jQueryLabel/zipball/master">Complete package with Examples</a></li>
+                        <li><a href="https://github.com/hasinhayder/jQueryLabel/blob/master/jqlabel.js">jqlabel.js</a></li>
+                        <li><a href="https://github.com/hasinhayder/jQueryLabel">Fork on GitHub</a></li>
+                    </ul>
+                </div>
+                <br/>
+                <div class="fblike">
+                    <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fscripts.ofhas.in%2Fjqlabel%2F&amp;layout=standard&amp;show_faces=true&amp;width=250&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:80px;" allowTransparency="true"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column grid_6">
+                <div class="footer left">
+                    &copy; 2011 <a href="http://hasin.wordpress.com">Hasin Hayder</a>
+                </div>
+            </div>
+            <div class="column grid_6">
+                <div class="footer right">
+                    If you like jQLabel, please <a href="http://plugins.jquery.com/project/jQLabel">vote here</a>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+
+
+            $(document).ready(function(){
+                $(".label").jQLabel({"pointer":true,
+                    "labels":{
+                        "awesome":"#FF9E00",
+                        "gmail":"#A65D03",
+                        "labels":"#A49774",
+                        "world":"#CE0000"
+                    }
+                });
+                $(".important").jQLabel();
+                $(".options").jQLabel({backgroundColor:"#356781"});
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+.jq-base{
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    padding:2px 4px;
+    font:9px verdana,arial,sans-serif;
+    margin:0 -1px;
+    white-space: nowrap;
+    padding: 2px 4px;
+    vertical-align:middle;
+}
